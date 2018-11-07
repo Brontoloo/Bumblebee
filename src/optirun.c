@@ -37,7 +37,6 @@
 #include "bbsocketclient.h"
 #include "bblogger.h"
 #include "bbrun.h"
-#include "driver.h"
 
 
 /**
@@ -62,7 +61,7 @@ static void handle_signal(int sig) {
 
 /**
  * Prints the status of the Bumblebee server if available
- * @return EXIT_SUCCESS if the status is succesfully retrieved,
+ * @return EXIT_SUCCESS if the status is successfully retrieved,
  * EXIT_FAILURE otherwise
  */
 static int report_daemon_status(void) {
@@ -298,8 +297,8 @@ struct optirun_bridge {
 };
 
 static struct optirun_bridge backends[] = {
-  {"virtualgl", check_virtualgl, run_virtualgl},
   {"primus", check_primus, run_primus},
+  {"virtualgl", check_virtualgl, run_virtualgl},
   {"none", check_none, run_none}, // keep last
   {NULL, NULL, NULL}
 };
